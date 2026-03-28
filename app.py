@@ -66,9 +66,10 @@ header{
 st.header("Thunderbolt-Ai") 
 input = st.text_input("what's your doubt " , key = "input")  
 submit = st.button("Click Here") 
-
-if submit :
-    response = my_output(input) 
-    st.subheader("Your Response is")
-    st.write(response)
-
+if submit:
+    if input.strip() != "":
+        response = my_output(input)
+        st.subheader("Your Response is")
+        st.write(response)
+    else:
+        st.warning("Please enter your question")
